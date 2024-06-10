@@ -77,7 +77,7 @@ def main(model, with_feedback_arg, with_notes_arg, num_agents, level_to_run):
         for alpha in alphas :
             if str(alpha) in table.keys():
                 continue
-            env = World(recipe_filename='./assets/recipe.json', task_filename='./assets/tasks_level_iclr.json',
+            env = World(recipe_filename='./assets/recipe.json', task_filename='./assets/tasks_level_final.json',
                          level=level, use_task_lifetime_interval_oracle=True,
                         alpha=alpha, beta=2.5, num_agents=NUM_AGENTS, override_agent=True)
             max_episode = 3

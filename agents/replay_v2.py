@@ -21,7 +21,7 @@ for alpha in alphas:
     success = 0
     failed = 0
 
-    env = World(recipe_filename='./assets/recipe.json', task_filename= 'assets/tasks_level_iclr.json', level='level_10', 
+    env = World(recipe_filename='./assets/recipe.json', task_filename= 'assets/tasks_level_final.json', level='level_10', 
                 use_task_lifetime_interval_oracle=True,
                 alpha=alpha, beta=2.5, num_agents=4, override_agent=True)
 

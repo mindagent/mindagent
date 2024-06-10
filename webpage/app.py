@@ -33,7 +33,7 @@ suggestions = '-execution suggestions:\n  --  []\n'
 
 @app.route('/')
 def start():
-    with open("assets/tasks_level_iclr.json", 'r') as f:
+    with open("assets/tasks_level_final.json", 'r') as f:
         data = json.load(f)
 
     levels = []
@@ -274,7 +274,7 @@ def result():
         world = World(override_agent=True, max_steps=60, alpha=alpha,
                         seed=seed, num_agents=int(result['numAgents']), 
                       recipe_filename="assets/recipe.json",
-                      task_filename="assets/tasks_level_iclr.json", level=current_level,
+                      task_filename="assets/tasks_level_final.json", level=current_level,
                     use_task_lifetime_interval_oracle=True,
                       play_mode = play_mode)
 
@@ -349,7 +349,7 @@ def recipe():
     else:
         level = 'level_0'
 
-    with open('assets/tasks_level_iclr.json', 'r') as f:
+    with open('assets/tasks_level_final.json', 'r') as f:
         task_level = json.load(f)
     dishes = task_level[level]['task_list']
 
