@@ -20,6 +20,8 @@ Please read agents/chat_agent.py  for more options.
 python agents/chat_agent.py  --level level_0 gpt-4 --num_agents 2
 ```
 
+Warning: It's very expensive!
+
 ## Run RL experiment
 ```bash
 python train/train.py --level level_0
