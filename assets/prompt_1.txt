@@ -1,0 +1,163 @@
+single goal for text completion agent
+###
+Goal: porkMeatcake
+t=0
+-state:
+at(agent0, servingtable0)
+at(agent1, servingtable0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-action:
+goto_agent0_storage0
+goto_agent1_storage0
+
+Goal: porkMeatcake
+t=1
+-state:
+at(agent0, storage0)
+at(agent1, storage0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-action:
+get_agent0_flour_storage0
+get_agent1_pork_storage0
+
+Goal: porkMeatcake
+t=2
+-state:
+at(agent0, storage0)
+at(agent1, storage0)
+hold(agent1, flour)
+hold(agent2, pork)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-action:
+goto_agent0_blender0
+goto_agent1_blender0
+
+Goal: porkMeatcake
+t=3
+-state:
+at(agent0, blender0)
+at(agent1, blender0)
+hold(agent1, flour)
+hold(agent2, pork)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-action:
+put_agent0_flour_blender0
+put_agent1_pork_blender0
+
+Goal: porkMeatcake
+t=4
+-state:
+at(agent0, blender0)
+at(agent1, blender0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, flour_pork)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-action:
+activate_agent0_blender0
+noop_agent1
+
+Goal: porkMeatcake
+t=5
+-state:
+at(agent0, blender0)
+at(agent1, blender0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, porkMeatcake)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-action:
+goto_agent0_storage0
+noop_agent1
+
+Goal: porkMeatcake
+t=6
+-state:
+at(agent0, storage0)
+at(agent1, blender0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, porkMeatcake)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-action:
+noop_agent0
+get_agent1_porkMeatcake_blender0
+
+Goal: porkMeatcake
+t=7
+-state:
+at(agent0, storage0)
+at(agent1, blender0)
+hold(agent1, None)
+hold(agent2, porkMeatcake)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-action:
+noop_agent0
+goto_agent1_servingtable0
+
+
+t=8
+-state:
+at(agent0, storage0)
+at(agent1, servingtable0)
+hold(agent1, None)
+hold(agent2, porkMeatcake)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-action:
+noop_agent0
+put_agent1_porkMeatcake_servingtable0

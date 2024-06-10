@@ -1,0 +1,302 @@
+
+multiple goal for chat-based agent
+###
+There are 3 agents available, so you can execute 3 actions at a time.
+This is an example you can use as a reference for a different level.
+
+-game state:
+current game level: level_2
+current dishes:
+    name: chickenMeatcake lifetime: 12
+current game step: 0
+maximum game steps: 30
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, None)
+at(agent2, servingtable0)
+hold(agent2, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+inside(blender1, None)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_storage0
+goto_agent1_storage0
+goto_agent2_storage0
+***
+-game state:
+current game level: level_2
+current dishes:
+    name: chickenMeatcake lifetime: 11
+current game step: 1
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+at(agent2, storage0)
+hold(agent2, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+inside(blender1, None)
+
+-accomplished task:
+
+-action:
+***
+get_agent0_chicken_storage0
+get_agent1_flour_storage0
+get_agent2_flour_storage0
+***
+-game state:
+current game level: level_2
+current dishes:
+    name: chickenMeatcake lifetime: 10
+current game step: 2
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, chicken)
+at(agent1, storage0)
+hold(agent1, flour)
+at(agent2, storage0)
+hold(agent2, flour)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+inside(blender1, None)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_blender0
+goto_agent1_blender0
+goto_agent2_blender1
+***
+-game state:
+current game level: level_2
+current dishes:
+    name: chickenMeatcake lifetime: 9
+current game step: 3
+maximum game steps: 30
+
+-agent state:
+at(agent0, blender0)
+hold(agent0, chicken)
+at(agent1, blender0)
+hold(agent1, flour)
+at(agent2, blender1)
+hold(agent2, flour)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+inside(blender1, None)
+
+-accomplished task:
+
+-action:
+***
+put_agent0_blender0
+put_agent1_blender0
+put_agent2_blender1
+***
+-game state:
+current game level: level_2
+current dishes:
+    name: chickenMeatcake lifetime: 8
+current game step: 4
+maximum game steps: 30
+
+-agent state:
+at(agent0, blender0)
+hold(agent0, None)
+at(agent1, blender0)
+hold(agent1, None)
+at(agent2, blender1)
+hold(agent2, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, chicken&flour)
+inside(blender1, flour)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_storage0
+activate_agent1_blender0
+goto_agent2_storage0
+***
+-game state:
+current game level: level_2
+current dishes:
+    name: chickenMeatcake lifetime: 7
+    name: chickenMeatcake lifetime: 12
+current game step: 5
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, blender0)
+hold(agent1, None)
+at(agent2, storage0)
+hold(agent2, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, chickenMeatcake)
+occupy(blender0)
+inside(blender1, flour)
+
+-accomplished task:
+
+-action:
+***
+get_agent0_flour_storage0
+noop_agent1
+get_agent2_chicken_storage0
+***
+-game state:
+current game level: level_2
+current dishes:
+    name: chickenMeatcake lifetime: 6
+    name: chickenMeatcake lifetime: 11
+current game step: 6
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, flour)
+at(agent1, blender0)
+hold(agent1, None)
+at(agent2, storage0)
+hold(agent2, chicken)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, chickenMeatcake)
+inside(blender1, flour)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_blender0
+get_agent1_blender0
+goto_agent2_blender1
+***
+-game state:
+current game level: level_2
+current dishes:
+    name: chickenMeatcake lifetime: 5
+    name: chickenMeatcake lifetime: 10
+current game step: 7
+maximum game steps: 30
+
+-agent state:
+at(agent0, blender0)
+hold(agent0, flour)
+at(agent1, blender0)
+hold(agent1, chickenMeatcake)
+at(agent2, blender1)
+hold(agent2, chicken)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+inside(blender1, flour)
+
+-accomplished task:
+
+-action:
+***
+put_agent0_blender0
+goto_agent1_servingtable0
+put_agent2_blender1
+***
+-game state:
+current game level: level_2
+current dishes:
+    name: chickenMeatcake lifetime: 4
+    name: chickenMeatcake lifetime: 9
+current game step: 8
+maximum game steps: 30
+
+-agent state:
+at(agent0, blender0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, chickenMeatcake)
+at(agent2, blender1)
+hold(agent2, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, flour)
+inside(blender1, flour&chicken)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_storage0
+put_agent1_servingtable0
+activate_agent2_blender1
+***
+-game state:
+current game level: level_2
+current dishes:
+    name: chickenMeatcake lifetime: 8
+current game step: 9
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, None)
+at(agent2, blender1)
+hold(agent2, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, flour)
+inside(blender1, chickenMeatcake)
+occupy(blender1)
+
+-accomplished task:
+chickenMeatcake,
+
+-action:
+***
+get_agent0_pork_storage0
+goto_agent1_blender0
+goto_agent2_storage0

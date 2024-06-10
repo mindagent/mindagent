@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guide to the Kitchen Game</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f0f0;
+            }
+            .container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+            ol {
+                padding-left: 20px;
+            }
+            li {
+                margin-bottom: 10px;
+                color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to the Kitchen Game! </h1>
+            <h2>Here are a few things you need to know before starting the game:</h2>
+            <h3>1. Overview</h3>
+            Below shows the game console. It displays some information about the game state. What you can do is selecting the robot and action to dispatch. You may find more details inside the illustration.
+
+            <img src="{{ url_for('static', filename='images/overcooked_guide_1.svg') }}" alt="Description of image">
+            <h3>2. How to win the game</h3>
+            The goal of this game is simple. With new dish orders coming to "<b>Current dishes</b>", you need to complete <b>as many dishes as possible</b> by dispatching the robots. Please note:
+            <ul>
+                <li>You may fetch any ingredients from "storage" and dispose waste to it. All the finished dishes have to be delivered to "serving table".</li>
+                <li> Each dish should be completed in time, otherwise it will expires.</li>
+                <li> Some dishes can be complicated to make, therefore robots need to collaborate to save some time.</li>
+                <li> You can always click <b>Open Recipe</b> to learn how to cook the dishes that will appear in this level.</li>
+            </ul>
+
+            <h3>3. How to dispatch the robots</h3>
+            This is easy:
+            <br>
+            <br>
+            <b>Step 1</b>: Pick an action (You are controlling robot0); the available actions are listed below:
+            <ul>
+                <li><b>noop</b>: just do nothing.</li>
+                <li><b>goto X</b>: robot goes to location X in the kitchen.</li>
+                <li><b>get Y from X</b>: robot gets item Y from location X, note: you cannot specify Y unless X is "storage" -- you just get anything from X.</li>
+                <li><b>put into X</b>: robot put everything it holds to location X.</li>
+                <li><b>activate X</b>: robot activate location X, e.g. start chopping, start blendering, etc</li>
+            </ul>
+            Note: not all actions are valid during the game. Invalid actions will be automatically excluded from the available actions in the game console.
+            <br>
+            <br>
+            <b>Step 2</b>: Hit Submit Button and back to step 1.
+
+            <h3>3. What is happening in the kitchen</h3>
+
+            We display <b>Robot states</b> and <b>Kitchen states</b> to help you understand what is going on in the kitchen.
+            <br>
+            <br>
+            <b>Robot states</b>. For each robot, we show its current location, what is the robot holding, and whether it is occupied (e.g. chopping).
+            <ul>
+                <li> The robot has to be at location X to perform "get Y from X", "put into X" and "activate X".</li>
+                <li>The robot has to be holding nothing to perform "get Y from X".</li>
+                <li>The robot cannot be dispatched (or can only be dispatched with "noop") if it is occupied.</li>
+            </ul>
+            <b>Kitchen states</b>. For each kitchen location, we show what items are inside it, and whether it is occupied (e.g. blendering).
+            <ul>
+                <li> "storage" will always contains "everything" as you can put anything and get any ingredients from it.</li>
+                <li>Location X cannot be touched (get, put, activate) if it is occupied. But goto X is still OK.</li>
+            </ul>
+
+            <h3>4. Other tips</h3>
+
+            Recipe is your good friend. Hit "Open Recipe" to see it at any time.
+            <br>
+            <br>
+            Keep an eye on the current time step and current dishes (and their remaining time!). You won't be rewarded if a dish is completed but expired already.
+            <br>
+            <br>
+            There might be multiple locations with the same type, e.g. blender0 and blender1. Making good use of them can help mitigate the congestion.
+        </div>
+    </body>
+</html>

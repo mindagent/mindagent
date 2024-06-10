@@ -1,0 +1,23 @@
+{
+    "level_1": {
+        "task_list": {
+            "porkMeatcake": {
+                "ingredients": ["porkMeatcake"],
+                "location": "servingtable"
+            }
+        },
+        "kitchen": [
+            "storage",
+            "servingtable",
+            "servingtable",
+            "blender",
+            "blender",
+            "chopboard",
+            "pot",
+            "pan",
+            "fryer",
+            "mixer"
+        ],
+        "num_agents": 2
+    }
+}

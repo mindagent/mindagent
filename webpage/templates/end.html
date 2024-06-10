@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Thanks for your participation. You unique id is: {{ user_id }} . Please provide this to your person of contact and fill the form below</h2>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSc3avHhCQVTljqjr4cW7lecnfSFGQNxw_Rl0PXiaNuNM_oeDA/viewform?usp=pp_url&entry.1635225212={{user_id}}&entry.1719096717={{num_agents-1}}" target="_blank"> Google Form  </a>
+{% endblock %}

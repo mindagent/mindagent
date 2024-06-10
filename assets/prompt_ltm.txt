@@ -1,0 +1,242 @@
+multiple goal for chat-based agent
+###
+There are 2 agents available, so you can execute 2 actions at a time.
+Goal: porkMeatcake
+t=0
+-state:
+at(agent0, servingtable0)
+at(agent1, servingtable0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-reasoning:
+***
+We need to cook a porkMeatCake. According to the recipes, to cook a porkMeatCake, we need pork and flour. Pork and flour are base ingredients. So we need to get them from the storage. We need to get two different ingredients. Both agents do not hold anything, and they are not at the storage. So both agents are going to the storage.
+
+-action:
+
+goto_agent0_storage0
+goto_agent1_storage0
+***
+
+Goal: porkMeatcake
+t=1
+-state:
+at(agent0, storage0)
+at(agent1, storage0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-reasoning:
+***
+We need to cook a porkMeatCake. According to the recipes, to cook a porkMeatCake, we need pork and flour. Pork and flour are base ingredients. So we need to obtain them from the storage. We need to get two different ingredients. Both agents do not hold anything, they are located at the storage. So one agent get pork from the storage, and the other agent get flour from the storage.
+
+-action:
+
+get_agent0_flour_storage0
+get_agent1_pork_storage0
+***
+
+Goal: porkMeatcake
+t=2
+-state:
+at(agent0, storage0)
+at(agent1, storage0)
+hold(agent1, flour)
+hold(agent2, pork)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-reasoning:
+***
+We need to cook a porkMeatCake. According to the recipes, to cook a porkMeatCake, we need pork and flour. We need to put them inside the blender. Since agent0 is holding flour, and agent1 is holding the pork, but they are not located at the blender. They can just go to the blender.
+
+-action:
+
+goto_agent0_blender0
+goto_agent1_blender0
+***
+
+Goal: porkMeatcake
+t=3
+-state:
+at(agent0, blender0)
+at(agent1, blender0)
+hold(agent1, flour)
+hold(agent2, pork)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-reasoning:
+***
+We need to cook a porkMeatCake. According to the recipes, to cook a porkMeatCake, we need pork and flour. We need to put them inside the blender. Since agent0 is holding flour, and agent1 is holding the pork, and they are located at the blender. They can just put pork and flour into the blender.
+
+-action:
+
+put_agent0_flour_blender0
+put_agent1_pork_blender0
+***
+
+Goal: porkMeatcake
+t=4
+-state:
+at(agent0, blender0)
+at(agent1, blender0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, flour&pork)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-reasoning:
+***
+We need to cook a porkMeatCake. According to the recipes, to cook a porkMeatCake, we need to use blender. Since flour and pork are inside the blender0, and nothing else is inside the blender0, and agent0 is located at the blender0. Agent0 can just activate the blender. Agent1 can just take a rest.
+
+-action:
+***
+activate_agent0_blender0
+noop_agent1
+***
+
+Goal: porkMeatcake
+t=5
+-state:
+at(agent0, blender0)
+at(agent1, blender0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, porkMeatcake)
+occupy(blender0)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-reasoning:
+***
+We need to put a porkMeatCake to the servingtable. porkMeatCake is alreay inside the blender0. However, blender0 is occupied, so we need to wait a bit. 
+
+-action:
+
+noop_agnet0
+noop_agent1
+***
+
+Goal: porkMeatcake
+t=6
+-state:
+at(agent0, blender0)
+at(agent1, blender0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, porkMeatcake)
+occupy(blender0)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-reasoning:
+***
+We need to put a porkMeatCake to the servingtable. porkMeatCake is alreay inside the blender0. However, blender0 is occupied, so we need to wait a bit. 
+
+-action:
+
+noop_agnet0
+noop_agent1
+***
+
+Goal: porkMeatcake
+t=7
+-state:
+at(agent0, blender0)
+at(agent1, blender0)
+hold(agent1, None)
+hold(agent2, None)
+inside(storage0, None)
+inside(blender0, porkMeatcake)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-reasoning:
+***
+We need to put a porkMeatCake to the servingtable. porkMeatCake is alreay inside the blender0. Agents are not holding anything, and blender0 is not occupied. so one agent can get porkMeatCake from the blender. 
+
+-action:
+
+noop_agent0
+get_agent1_porkMeatcake_blender0
+***
+
+Goal: porkMeatcake
+t=8
+-state:
+at(agent0, storage0)
+at(agent1, blender0)
+hold(agent1, None)
+hold(agent2, porkMeatcake)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-reasoning:
+***
+We need to put a porkMeatCake to the servingtable. agent1 is holding porkMeatCake, but he is not located at the servingtable, so he can go to the servingtable to deliver. 
+
+-action:
+
+noop_agent0
+goto_agent1_servingtable0
+***
+
+t=9
+-state:
+at(agent0, storage0)
+at(agent1, servingtable0)
+hold(agent1, None)
+hold(agent2, porkMeatcake)
+inside(storage0, None)
+inside(blender0, None)
+inside(chopboard0, None)
+inside(chopboard1, None)
+inside(pan0, None)
+inside(servingtable0, None)
+
+-reasoning:
+***
+We need to put a porkMeatCake to the servingtable. agent1 is holding porkMeatCake, and he is located at the servingtable, so he put porkMeatCake to the servingtable. 
+
+-action:
+
+noop_agent0
+put_agent1_porkMeatcake_servingtable0

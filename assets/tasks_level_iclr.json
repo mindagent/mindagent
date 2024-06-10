@@ -1,0 +1,416 @@
+{
+    "level_0": {
+        "task_interval": 5,
+        "task_list": {
+            "salmonMeatcake": {
+                "ingredients": ["salmonMeatcake"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+        "kitchen": [
+            "storage",
+            "servingtable",
+            "blender"
+        ],
+        "num_agents": 2
+    },
+
+    "level_1": {
+        "task_interval": 5,
+        "task_list": {
+            "salmonMeatcake": {
+                "ingredients": ["salmonMeatcake"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "lambMeatcake": {
+                "ingredients": ["lambMeatcake"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "lobsterMeatcake": {
+                "ingredients": ["lobsterMeatcake"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+        "kitchen": [
+            "storage",
+            "servingtable",
+            "blender",
+            "blender"
+        ],
+        "num_agents": 2
+    },
+
+    "level_2": {
+        "task_interval": 5,
+        "task_list": {
+            "salmonSashimi": {
+                "ingredients": ["salmonSashimi"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "tunaSashimi": {
+                "ingredients": ["tunaSashimi"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "mixedSashimi": {
+                "ingredients": ["mixedSashimi"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+
+        "kitchen": [
+            "storage",
+            "servingtable",
+            "chopboard",
+            "chopboard",
+            "mixer",
+            "mixer"
+        ],
+        "num_agents": 2
+    },
+
+    "level_3": {
+        "task_interval": 5,
+        "task_list": {
+            "salmonSushi": {
+                "ingredients": ["salmonSushi"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "tunaSushi": {
+                "ingredients": ["tunaSushi"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+
+        "kitchen": [
+            "storage",
+            "servingtable",
+            "pot",
+            "pot",
+            "chopboard",
+            "chopboard",
+            "mixer",
+            "mixer"
+        ],
+        "num_agents": 3
+    },
+
+    "level_4":{
+        "task_interval": 5,
+        "task_list": {
+
+            "tomatoSalad": {
+                "ingredients": ["tomatoSalad"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+
+            "tomatoLettuceSalad": {
+                "ingredients": ["tomatoLettuceSalad"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+
+            "tomatoCucumberSalad": {
+                "ingredients": ["tomatoCucumberSalad"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+
+            "lettuceSalad": {
+                "ingredients": ["lettuceSalad"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+        "kitchen": [
+            "storage",
+            "servingtable",
+            "chopboard",
+            "chopboard",
+            "mixer",
+            "mixer"
+        ],
+        "num_agents": 3
+      },
+
+      "level_5":{
+        "task_interval": 5,
+        "task_list": {
+            "tomatoPasta": {
+                "ingredients": ["tomatoPasta"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "beefPasta": {
+                "ingredients": ["beefPasta"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "porkPasta": {
+                "ingredients": ["porkPasta"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+        "kitchen": [
+            "storage",
+            "pan",
+            "pan",
+            "pot",
+            "pot",
+            "mixer",
+            "mixer",
+            "blender",
+            "blender",
+            "servingtable",
+            "chopboard",
+            "chopboard"
+        ],
+        "num_agents": 3
+      },
+
+      "level_6":{
+        "task_interval": 5,
+        "task_list": {
+            "pepperoniPizza": {
+                "ingredients": ["pepperoniPizza"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "hawaiianPizza": {
+                "ingredients": ["hawaiianPizza"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "chickenPizza": {
+                "ingredients": ["chickenPizza"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+        "kitchen": [
+            "storage",
+            "blender",
+            "blender",
+            "servingtable",
+            "oven",
+            "oven"
+        ],
+        "num_agents": 4
+      },
+
+      "level_7": {
+        "task_interval": 5,
+        "task_list": {
+            "onionPotatoCarrotSoup": {
+                "ingredients": ["onionPotatoCarrotSoup"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "onionPotatoLeekSoup": {
+                "ingredients": ["onionPotatoLeekSoup"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+
+            "onionBroccoliCheeseSoup": {
+                "ingredients": ["onionBroccoliCheeseSoup"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+        "kitchen": [
+            "storage",
+            "pot",
+            "pot",
+            "servingtable"
+        ],
+        "num_agents": 4
+      },
+
+      "level_8":{
+        "task_interval": 5,
+        "task_list": {
+           "porkDumpling": {
+                "ingredients": ["porkDumpling"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "beefDumpling": {
+                "ingredients": ["beefDumpling"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "salmonDumpling": {
+                "ingredients": ["salmonDumpling"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+        "kitchen": [
+            "storage",
+            "steamer",
+            "steamer",
+            "blender",
+            "blender",
+            "servingtable"
+        ],
+        "num_agents": 4
+      },
+
+      "level_9":{
+        "task_interval": 5,
+        "task_list": {
+           "cheeseBurger":{
+                "ingredients": ["cheeseBurger"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "MaxJr":{
+                "ingredients": ["MaxJr"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "Hopper":{
+                "ingredients": ["Hopper"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+           },
+
+        "kitchen": [
+            "storage",
+            "pan",
+            "pan",
+            "mixer",
+            "mixer",
+            "chopboard",
+            "chopboard",
+            "servingtable"
+        ],
+        "num_agents": 4
+      },
+      "level_10":{
+        "task_interval": 5,
+        "task_list": {
+           "BurritodePastor":{
+                "ingredients": ["BurritodePastor"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "BurritodeAsada":{
+                "ingredients": ["BurritodeAsada"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "BurritodePollo":{
+                "ingredients": ["BurritodePollo"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+
+        "kitchen": [
+            "storage",
+            "pan",
+            "pan",
+            "mixer",
+            "mixer",
+            "pot",
+            "pot",
+            "servingtable"
+        ],
+        "num_agents": 4
+      },
+
+      "level_11":{
+        "task_interval": 5,
+        "task_list": {
+            "BurritodePastor":{
+                "ingredients": ["BurritodePastor"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "BurritodeAsada":{
+                "ingredients": ["BurritodeAsada"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "BurritodePollo":{
+                "ingredients": ["BurritodePollo"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "salmonSushi": {
+                "ingredients": ["salmonSushi"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "tunaSushi": {
+                "ingredients": ["tunaSushi"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+
+        "kitchen": [
+            "storage",
+            "pan",
+            "pan",
+            "mixer",
+            "mixer",
+            "pot",
+            "pot",
+            "chopboard",
+            "chopboard",
+            "servingtable"
+        ],
+        "num_agents": 4
+      },
+
+      "level_12":{
+        "task_interval": 5,
+        "task_list": {
+           "potatoSalad":{
+                "ingredients": ["potatoSalad"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "smashedPotato":{
+                "ingredients": ["smashedPotato"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            },
+            "frenchFries":{
+                "ingredients": ["frenchFries"],
+                "location": "servingtable",
+                "task_lifetime": 10
+            }
+        },
+
+        "kitchen": [
+            "storage",
+            "pan",
+            "pan",
+            "blender",
+            "blender",
+            "mixer",
+            "mixer",
+            "steamer",
+            "steamer",
+            "chopboard",
+            "chopboard",
+            "servingtable"
+        ],
+        "num_agents": 4
+      }
+}

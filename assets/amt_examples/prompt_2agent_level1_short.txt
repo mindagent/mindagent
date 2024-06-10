@@ -1,0 +1,55 @@
+
+multiple goal for chat-based agent
+###
+There are 2 agents available, so you can execute 2 actions at a time.
+This is an example you can use as a reference for a different level.
+
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 17
+current game step: 0
+maximum game steps: 30
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_storage0
+goto_agent1_storage0
+***
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 16
+current game step: 1
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+
+-accomplished task:
+
+-action:
+***
+get_agent0_flour_storage0
+get_agent1_pork_storage0

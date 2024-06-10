@@ -1,0 +1,15 @@
+transitions
+openai
+pytest
+networkx==2.5
+flask
+gitpython
+gymnasium == 0.28.1
+gym == 0.21.0
+sentence-transformers
+stable-baselines3 >= 2.0.0
+sb3-contrib @ git+https://github.com/Stable-Baselines-Team/stable-baselines3-contrib/
+chardet
+tensorboard
+anthropic
+tiktoken

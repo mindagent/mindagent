@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>You are working with some robots to prepare dishes in a cooking game. You are provided with a recipe for each dish, and your goal is to finish the dish before it gets expired. You are trying to complete as many dishes as possible. Each time you click the submit button, the time will move forward by one step. The game will end when it reaches the maxium steps allowed.</p>
+
+<p>
+  Hit the button below for a more detailed guide to the game!
+</p>
+<a href="/guide" target="_blank">
+  <button>Open Game Guide</button>
+</a>
+
+<hr>
+<form action = "/result" method = "POST">
+    <div class="form-group">
+        <label for="numAgents"><b>Number of robots</b></label>
+        <!-- <input type="number" class="form-control" id="numAgents" name="numAgents" value="2"> -->
+        <select name="numAgents">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    </div>
+
+    <label for="numAgents"><b>Game level (Please choose level3 for now)</b></label>
+    <br>
+    <select name="level">
+      <!-- {% for option in levels %} -->
+        <!-- <option value="{{ option.value }}">{{ option.label }}</option> -->
+      <!-- {% endfor %} -->
+      <option value="level_3"> level_3</option>
+    </select>
+    <br>
+
+    <b>Game Mode: </b>
+    <select name="game_mode">
+        
+        <!-- <option value="annotation"> Play the Game single-agent </option> -->
+        <option value="collaboration"> Collaborate With Group1 Agents </option>
+        <option value="random"> Collaborate With Group2 agents </option>
+      
+    </select>
+  <hr>
+	<button type="submit" class="btn btn-primary">Start</button>
+
+</form>
+{% endblock %}

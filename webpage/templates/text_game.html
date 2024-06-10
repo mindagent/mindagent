@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2> {{ level_name }}</h2>
+<form action="/recipe" method="post" target="_blank">
+    <input type="hidden" name="level_name" value="{{ level_name }}">
+    <input type="submit" value="Open Recipe">
+</form>
+
+<a href="/guide" target="_blank">
+    <button>Open Game Guide</button>
+</a>
+<hr>
+<h2> Current time step: {{time_step}} (max steps: {{max_step}}) </h2>
+<hr>
+    <h2>Current dishes:
+        <ol>
+        {% for task_name, task_lifetime in tasks_name|zip(tasks_lifetime) %}
+        <li style="font-size: 24px;">
+            <b>{{ task_name }}</b>; remaining time: {{ task_lifetime }}
+        </li>
+        {% endfor %}
+        </ol>
+    </h2>
+<hr>
+    <table class="top">
+        <caption style="font-size: 24px;">Robot states</caption>
+        <tr>
+            <th> robot name</th>
+            <th> robot location</th>
+            <th> items this robot is holding </th>
+            <th> robot is using tools (robot cannot perform any other actions if it is using tools)</th>
+        </tr>
+        {% for agent in agents %}
+        <tr>
+            <td >robot {{agent.id}} </td>
+            <td >{{agent.location}} </td>
+            <td >{{agent.hold}} </td>
+            <td >{{agent.occupy}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <table class="top">
+        <caption style="font-size: 24px;">Kitchen states</caption>
+        <tr>
+            <th> location name</th>
+            <th> objects inside the location</th>
+            <th> location is in use (cannot activate the location if it is in use)</th>
+
+        </tr>
+        {% for tool in tools %}
+        <tr>
+            <td >{{tool.id}} </td>
+            <td >{{tool.objects}} </td>
+            <td >{{tool.occupy}} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+<hr>
+    <form action = "/game" method = "POST">
+    <div style="display: flex;">
+        <input type="hidden" name="user_id" value="{{ user_id }}" id="user_id">
+        <div>
+        {% for agent in num_agents %}
+        <select name="agent{{ agent }}_id" class="agentList" data-sublist=".subList{{agent}}">
+            {% for agent_inner in num_agents %}
+                {% if agent_inner ==  agent %}
+                    <option value="{{ agent_inner }}" selected="selected"> robot {{ agent_inner }}</option>
+                {% else %}
+                    <option value="{{ agent_inner }}"> robot {{ agent_inner }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+
+        <select name="agent{{ agent }}_action" class="subList{{agent}}">
+            {% for option in available_actions[agent] %}
+                {% if option ==  'noop' %}
+                    <option value="{{ option }}" selected="selected" >{{ option }}</option>
+                {% else %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <br>
+        {% endfor %}
+        </div>
+        <div style="margin-left: auto;">
+            <button id='submit_dispatch' type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    </form>
+    <hr>
+    <h2>Dishes completed:
+    <br>
+        <div style="font-size: 24px;">
+        {{ accomplished_orders }}
+        </div>
+    </h2>
+    <h2>Previous Actions: 
+        <br>
+        {% for action in previous_actions %}
+        {{action}}
+        <br>
+        {% endfor %}
+
+    </h2>
+    <br>
+    <br>
+    <br>
+    <script>
+        const selects = document.getElementsByClassName('agentList');
+        const submit = document.getElementById('submit_dispatch');
+
+        submit.addEventListener('click', function(event) {
+            const selectedOptions = {};
+            let repeat = false;
+            for(let otherSelect of selects) {
+                if(otherSelect.value in selectedOptions) {
+                    otherSelect.value = ''; // Set to default value
+                    repeat = true;
+                } else {
+                    selectedOptions[otherSelect.value] = true;
+                }
+            }
+            if (repeat) {
+                event.preventDefault();
+                alert('You cannot dispatch the same robot for more than once!');
+            }
+        });
+    </script>
+    <script>
+        // JavaScript code to scroll to the bottom
+        window.scrollTo(0, document.body.scrollHeight);
+
+        $(document).ready(function() {
+        $('.agentList').on('change', function() {
+            var selectedValue = $(this).val();
+            var sublistSelector = $(this).data('sublist');
+            var subList = $(sublistSelector);
+
+            if (selectedValue !== '') {
+            // Make an AJAX request to fetch the updated sub-list
+            $.ajax({
+                url: '/get_sub_list',
+                type: 'POST',
+                data: { mainOption: selectedValue, user_id: $('#user_id').val() },
+                success: function(response) {
+                updateSubList(subList, response);
+                },
+                error: function(error) {
+                console.log('Error:', error);
+                }
+            });
+            } else {
+            clearSubList(subList);
+            }
+        });
+        });
+
+        function updateSubList(subList, subListData) {
+            subList.empty();
+
+            // Append the options to the sub-list
+            $.each(subListData, function(index, option) {
+                subList.append($('<option>', {
+                value: option.value,
+                text: option.text
+                }));
+            });
+        }
+
+        function clearSubList(subList) {
+        subList.empty();
+        }
+    </script>
+{% endblock %}

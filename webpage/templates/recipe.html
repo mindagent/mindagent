@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipes of the Kitchen Game</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f0f0;
+            }
+            .container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+            ol {
+                padding-left: 20px;
+            }
+            li {
+                margin-bottom: 10px;
+                color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            {% for recipe in recipes %}
+            <tr>
+                <h2>{{recipe.dish}} </h2>
+                <br>
+                <br>
+                <img src="{{ url_for('static', filename=recipe.image_path) }}" alt="Description of image" width="80%" height="80%">
+            </tr>
+            <hr>
+            {% endfor %}
+        </div>
+    </body>
+</html>

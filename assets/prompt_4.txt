@@ -1,0 +1,1474 @@
+
+multiple goal for chat-based agent
+###
+There are 2 agents available, so you can execute 2 actions at a time.
+This is an example you can use as a reference for a different level.
+
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 10
+current game step: 0
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_storage0
+goto_agent1_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 9
+current game step: 1
+maximum game steps: 60
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+
+-action:
+***
+get_agent0_tuna_storage0
+get_agent1_tuna_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 8
+current game step: 2
+maximum game steps: 60
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, tuna)
+at(agent1, storage0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_chopboard0
+goto_agent1_chopboard0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 7
+current game step: 3
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, tuna)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+
+-action:
+***
+put_agent0_tuna_chopboard0
+put_agent1_tuna_chopboard0
+***
+-execution error messages:
+  --  ['chopboard0 reaches maximum capacity']
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 6
+current game step: 4
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, tuna)
+inside(mixer0, None)
+
+-accomplished task:
+
+-action:
+***
+activate_agent0_chopboard0
+put_agent1_tuna_chopboard0
+***
+-execution error messages:
+  --  ['chopboard0 is occupied, therefore cannot put objects into it', 'chopboard0 reaches maximum capacity']
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 5
+current game step: 5
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, tunaSashimi)
+inside(mixer0, None)
+
+-accomplished task:
+
+-action:
+***
+get_agent0_tunaSashimi_chopboard0
+goto_agent1_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 4
+current game step: 6
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, tunaSashimi)
+at(agent1, storage0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_servingtable0
+put_agent1_tuna_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 3
+current game step: 7
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, tunaSashimi)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+
+-action:
+***
+put_agent0_tunaSashimi_servingtable0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 8
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, 
+
+-action:
+***
+noop_agent0
+noop_agent1
+***
+-execution error messages:
+  --  ['None of the agents performed any actions which is not normal.']
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 9
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, 
+
+-action:
+***
+goto_agent0_storage0
+goto_agent1_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 10
+current game step: 10
+maximum game steps: 60
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, 
+
+-action:
+***
+get_agent0_tuna_storage0
+get_agent1_tuna_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 9
+current game step: 11
+maximum game steps: 60
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, tuna)
+at(agent1, storage0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, 
+
+-action:
+***
+goto_agent0_chopboard0
+goto_agent1_chopboard0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 8
+current game step: 12
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, tuna)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, 
+
+-action:
+***
+put_agent0_tuna_chopboard0
+put_agent1_tuna_chopboard0
+***
+-execution error messages:
+  --  ['chopboard0 reaches maximum capacity']
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 7
+current game step: 13
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, tuna)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, 
+
+-action:
+***
+activate_agent0_chopboard0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 6
+current game step: 14
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, tunaSashimi)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, 
+
+-action:
+***
+get_agent0_tunaSashimi_chopboard0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 5
+current game step: 15
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, tunaSashimi)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, 
+
+-action:
+***
+goto_agent0_servingtable0
+put_agent1_tuna_storage0
+***
+-execution error messages:
+  --  ['agent1 is not located in storage0']
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 4
+current game step: 16
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, tunaSashimi)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, 
+
+-action:
+***
+put_agent0_tunaSashimi_servingtable0
+goto_agent1_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 17
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, 
+
+-action:
+***
+noop_agent0
+put_agent1_tuna_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 18
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, 
+
+-action:
+***
+noop_agent0
+noop_agent1
+***
+-execution error messages:
+  --  ['None of the agents performed any actions which is not normal.']
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 19
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, 
+
+-action:
+***
+goto_agent0_storage0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: salmonSashimi lifetime: 10
+current game step: 20
+maximum game steps: 60
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, 
+
+-action:
+***
+get_agent0_salmon_storage0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: salmonSashimi lifetime: 9
+current game step: 21
+maximum game steps: 60
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, salmon)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, 
+
+-action:
+***
+goto_agent0_chopboard0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: salmonSashimi lifetime: 8
+current game step: 22
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, salmon)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, 
+
+-action:
+***
+put_agent0_salmon_chopboard0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: salmonSashimi lifetime: 7
+current game step: 23
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, salmon)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, 
+
+-action:
+***
+activate_agent0_chopboard0
+goto_agent1_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: salmonSashimi lifetime: 6
+current game step: 24
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, salmonSashimi)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, 
+
+-action:
+***
+get_agent0_salmonSashimi_chopboard0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: salmonSashimi lifetime: 5
+current game step: 25
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, salmonSashimi)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, 
+
+-action:
+***
+goto_agent0_servingtable0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: salmonSashimi lifetime: 4
+current game step: 26
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, salmonSashimi)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, 
+
+-action:
+***
+put_agent0_salmonSashimi_servingtable0
+goto_agent1_chopboard0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 27
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, chopboard0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, 
+
+-action:
+***
+goto_agent0_storage0
+goto_agent1_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 28
+maximum game steps: 60
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, 
+
+-action:
+***
+get_agent0_salmon_storage0
+get_agent1_tuna_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 29
+maximum game steps: 60
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, salmon)
+at(agent1, storage0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, 
+
+-action:
+***
+goto_agent0_chopboard0
+goto_agent1_chopboard0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 10
+current game step: 30
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, salmon)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, 
+
+-action:
+***
+put_agent0_salmon_chopboard0
+put_agent1_tuna_chopboard0
+***
+-execution error messages:
+  --  ['chopboard0 reaches maximum capacity']
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 9
+current game step: 31
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, salmon)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, 
+
+-action:
+***
+get_agent0_salmon_chopboard0
+put_agent1_tuna_chopboard0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 8
+current game step: 32
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, salmon)
+at(agent1, chopboard0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, tuna)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, 
+
+-action:
+***
+goto_agent0_mixer0
+activate_agent1_chopboard0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 7
+current game step: 33
+maximum game steps: 60
+
+-agent state:
+at(agent0, mixer0)
+hold(agent0, salmon)
+at(agent1, chopboard0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, tunaSashimi)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, 
+
+-action:
+***
+put_agent0_salmon_mixer0
+get_agent1_tunaSashimi_chopboard0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 6
+current game step: 34
+maximum game steps: 60
+
+-agent state:
+at(agent0, mixer0)
+hold(agent0, None)
+at(agent1, chopboard0)
+hold(agent1, tunaSashimi)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, salmon)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, 
+
+-action:
+***
+get_agent0_salmon_mixer0
+goto_agent1_servingtable0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: tunaSashimi lifetime: 5
+current game step: 35
+maximum game steps: 60
+
+-agent state:
+at(agent0, mixer0)
+hold(agent0, salmon)
+at(agent1, servingtable0)
+hold(agent1, tunaSashimi)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, 
+
+-action:
+***
+goto_agent0_chopboard0
+put_agent1_tunaSashimi_servingtable0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 36
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, salmon)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+put_agent0_salmon_chopboard0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 37
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, salmon)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+activate_agent0_chopboard0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 38
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, salmonSashimi)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+get_agent0_salmonSashimi_chopboard0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+current game step: 39
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, salmonSashimi)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+goto_agent0_servingtable0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: mixedSashimi lifetime: 25
+current game step: 40
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, salmonSashimi)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+put_agent0_salmonSashimi_servingtable0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: mixedSashimi lifetime: 24
+current game step: 41
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, salmonSashimi)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+noop_agent0
+noop_agent1
+***
+-execution error messages:
+  --  ['None of the agents performed any actions which is not normal.']
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: mixedSashimi lifetime: 23
+current game step: 42
+maximum game steps: 60
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, salmonSashimi)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+goto_agent0_chopboard0
+goto_agent1_storage0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: mixedSashimi lifetime: 22
+current game step: 43
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, salmonSashimi)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+get_agent0_salmon_storage0
+get_agent1_tuna_storage0
+***
+-execution error messages:
+  --  ['agent0 is not located in storage0']
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: mixedSashimi lifetime: 21
+current game step: 44
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, salmonSashimi)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+goto_agent0_storage0
+noop_agent1
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: mixedSashimi lifetime: 20
+current game step: 45
+maximum game steps: 60
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, salmonSashimi)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+get_agent0_salmon_storage0
+goto_agent1_chopboard0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: mixedSashimi lifetime: 19
+current game step: 46
+maximum game steps: 60
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, salmon)
+at(agent1, chopboard0)
+hold(agent1, tuna)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, salmonSashimi)
+inside(chopboard0, None)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+goto_agent0_chopboard0
+put_agent1_tuna_chopboard0
+***
+-execution error messages:
+  --  []
+-execution suggestions:
+  --  []
+-game state:
+current game level: level_4
+current dishes:
+    name: mixedSashimi lifetime: 18
+current game step: 47
+maximum game steps: 60
+
+-agent state:
+at(agent0, chopboard0)
+hold(agent0, salmon)
+at(agent1, chopboard0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, salmonSashimi)
+inside(chopboard0, tuna)
+inside(mixer0, None)
+
+-accomplished task:
+tunaSashimi, tunaSashimi, salmonSashimi, tunaSashimi, 
+
+-action:
+***
+put_agent0_salmon_chopboard0
+activate_agent1_chopboard0
+***

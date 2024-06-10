@@ -1,0 +1,300 @@
+{
+    "boiledLobster": {
+        "ingredients": ["potato", "lobster"],
+        "location": "pot"
+    },
+
+    "beefMeatcake": {
+        "ingredients": ["beef", "flour"],
+        "location": "blender"
+    },
+
+    "porkMeatcake": {
+        "ingredients": ["pork", "flour"],
+        "location": "blender"
+    },
+
+    "salmonMeatcake": {
+        "ingredients": ["salmon", "flour"],
+        "location": "blender"
+    },
+
+    "lambMeatcake": {
+        "ingredients": ["lamb", "flour"],
+        "location": "blender"
+    },
+
+    "chickenMeatcake": {
+        "ingredients": ["chicken", "flour"],
+        "location": "blender"
+    },
+
+    "turkeyMeatcake": {
+        "ingredients": ["turkey", "flour"],
+        "location": "blender"
+    },
+
+    "duckMeatcake": {
+        "ingredients": ["duck", "flour"],
+        "location": "blender"
+    },
+
+    "lobsterMeatcake": {
+        "ingredients": ["lobster", "flour"],
+        "location": "blender"
+    },
+
+    "cake": {
+        "ingredients": ["egg", "flour"],
+        "location": "blender"
+    },
+
+    "mixedGroundMeat": {
+        "ingredients": ["pork", "beef", "chicken"],
+        "location": "blender"
+    },
+
+
+    "groundBeef": {
+        "ingredients": ["beef"],
+        "location": "blender"
+    },
+
+    "groundPork": {
+        "ingredients": ["pork"],
+        "location": "blender"
+    },
+
+    "groundSalmon":{
+        "ingredients": ["salmon"],
+        "location": "blender"
+    },
+
+    "potatoSlice": {
+        "ingredients": ["potato"],
+        "location": "chopboard"
+    },
+
+    "onionSlice": {
+        "ingredients": ["onion"],
+        "location": "chopboard"
+    },
+
+    "carrotSlice": {
+        "ingredients": ["carrot"],
+        "location": "chopboard"
+    },
+
+    "lettuceSlice": {
+        "ingredients": ["lettuce"],
+        "location": "chopboard"
+    },
+
+    "tomatoSlice": {
+        "ingredients": ["tomato"],
+        "location": "chopboard"
+    },
+
+    "cucumberSlice": {
+        "ingredients": ["cucumber"],
+        "location": "chopboard"
+    },
+
+    "salmonSashimi": {
+        "ingredients": ["salmon"],
+        "location": "chopboard"
+    },
+
+    "tunaSashimi": {
+        "ingredients": ["tuna"],
+        "location": "chopboard"
+    },
+
+    "frenchFries": {
+        "ingredients": ["potatoSlice"],
+        "location": "fryer"
+    },
+
+    "potatoSalad":{
+        "ingredients": ["potatoSlice", "egg"],
+        "location": "mixer"
+    },
+
+    "rawSmashedPotato":{
+        "ingredients": ["potatoSlice"],
+        "location": "blender"
+    },
+
+    "smashedPotato":{
+        "ingredients": ["rawSmashedPotato"],
+        "location": "steamer"
+    },
+
+    "cookedRice": {
+        "ingredients": ["rice"],
+        "location": "pot"
+    },
+
+    "cookedPasta": {
+        "ingredients": ["pasta"],
+        "location": "pot"
+    },
+
+    "sauteedTomato":{
+        "ingredients": ["tomatoSlice"],
+        "location": "pan"
+    },
+
+    "sauteedPork":{
+        "ingredients": ["pork"],
+        "location": "pan"
+    },
+
+    "sauteedBeef":{
+        "ingredients": ["beef"],
+        "location": "pan"
+    },
+
+    "sauteedChicken":{
+        "ingredients": ["chicken"],
+        "location": "pan"
+    },
+
+    "sauteedGroundPork":{
+        "ingredients": ["groundPork"],
+        "location": "pan"
+    },
+
+    "sauteedGroundBeef":{
+        "ingredients": ["groundBeef"],
+        "location": "pan"
+    },
+    "tomatoPasta":{
+        "ingredients": ["cookedPasta", "sauteedTomato"],
+        "location": "mixer"
+    },
+
+    "porkPasta":{
+        "ingredients": ["cookedPasta", "sauteedGroundPork"],
+        "location": "mixer"
+    },
+
+    "beefPasta":{
+        "ingredients": ["cookedPasta", "sauteedGroundBeef"],
+        "location": "mixer"
+    },
+
+    "lettuceSalad": {
+        "ingredients": ["lettuceSlice"],
+        "location": "mixer"
+    },
+
+    "tomatoSalad": {
+        "ingredients": ["tomatoSlice"],
+        "location": "mixer"
+    },
+
+    "tomatoLettuceSalad": {
+        "ingredients": ["tomatoSlice", "lettuceSlice"],
+        "location": "mixer"
+    },
+
+    "tomatoCucumberSalad": {
+        "ingredients": ["tomatoSlice", "cucumberSlice"],
+        "location": "mixer"
+    },
+
+    "mixedSalad": {
+        "ingredients": ["tomatoSlice", "lettuceSlice", "cucumberSlice"],
+        "location": "mixer"
+    },
+
+    "mixedSashimi": {
+        "ingredients": ["salmonSashimi", "tunaSashimi"],
+        "location": "mixer"
+    },
+
+    "salmonSushi":{
+        "ingredients": ["salmonSashimi",  "cookedRice"],
+        "location": "mixer"
+    },
+
+    "salmonRoll":{
+        "ingredients": ["salmonSashimi",  "cookedRice", "seaweedSheet"],
+        "location": "mixer"
+    },
+
+    "tunaRoll":{
+        "ingredients": ["tunaSashimi",  "cookedRice", "seaweedSheet"],
+        "location": "mixer"
+    },
+
+    "tunaSushi":{
+        "ingredients": ["tunaSashimi",  "cookedRice"],
+        "location": "mixer"
+    },
+    "tomatoSauce": {
+        "ingredients": ["tomato"],
+        "location": "blender"
+    },
+    "pepperoniPizza":{
+        "ingredients": ["tomatoSauce", "pepperoni", "cheese", "dough"],
+        "location": "oven"
+    },
+    "hawaiianPizza":{
+        "ingredients": ["tomatoSauce", "pork", "cheese", "dough"],
+        "location": "oven"
+    },
+    "chickenPizza":{
+        "ingredients": ["tomatoSauce", "chicken", "cheese", "dough"],
+        "location": "oven"
+    },
+    "onionPotatoLeekSoup":{
+        "ingredients": ["onion", "potato", "leek"],
+        "location": "pot"
+    },
+    "onionPotatoCarrotSoup":{
+        "ingredients": ["onion", "potato", "carrot"],
+        "location": "pot"
+    },
+    "onionBroccoliCheeseSoup":{
+        "ingredients": ["onion", "broccoli", "cheese"],
+        "location": "pot"
+    },
+    "beefDumpling":{
+        "ingredients": ["groundBeef", "flour"],
+        "location": "steamer"
+    },
+    "porkDumpling":{
+        "ingredients": ["groundPork", "flour"],
+        "location": "steamer"
+    },
+    "salmonDumpling":{
+        "ingredients": ["groundSalmon", "flour"],
+        "location": "steamer"
+    },
+    "cheeseBurger":{
+        "ingredients": ["cheese", "sauteedBeef", "bread"],
+        "location": "mixer"
+    },
+    "MaxJr":{
+        "ingredients": ["lettuceSlice", "sauteedBeef", "cheese", "bread"],
+        "location": "mixer"
+    },
+    "Hopper":{
+        "ingredients": ["tomatoSlice", "lettuceSlice", "sauteedBeef", "bread"],
+        "location": "mixer"
+    },
+    "BurritodePastor":{
+        "ingredients": ["sauteedPork", "cookedRice", "tortilla"],
+        "location": "mixer"
+    },
+    "BurritodeAsada":{
+        "ingredients": ["sauteedBeef", "cookedRice", "tortilla"],
+        "location": "mixer"
+    },
+    "BurritodePollo":{
+        "ingredients": ["sauteedChicken", "cookedRice", "tortilla"],
+        "location": "mixer"
+    }
+}

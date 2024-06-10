@@ -1,0 +1,259 @@
+
+multiple goal for chat-based agent
+###
+There are 2 agents available, so you can execute 2 actions at a time.
+This is an example you can use as a reference for a different level.
+
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 17
+current game step: 0
+maximum game steps: 30
+
+-agent state:
+at(agent0, servingtable0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_storage0
+goto_agent1_storage0
+***
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 16
+current game step: 1
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, storage0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+
+-accomplished task:
+
+-action:
+***
+get_agent0_flour_storage0
+get_agent1_pork_storage0
+***
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 15
+current game step: 2
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, flour)
+at(agent1, storage0)
+hold(agent1, pork)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_blender0
+goto_agent1_blender0
+***
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 14
+current game step: 3
+maximum game steps: 30
+
+-agent state:
+at(agent0, blender0)
+hold(agent0, flour)
+at(agent1, blender0)
+hold(agent1, pork)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+
+-accomplished task:
+
+-action:
+***
+put_agent0_blender0
+put_agent1_blender0
+***
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 13
+current game step: 4
+maximum game steps: 30
+
+-agent state:
+at(agent0, blender0)
+hold(agent0, None)
+at(agent1, blender0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, flour&pork)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_storage0
+activate_agent1_blender0
+***
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 12
+current game step: 5
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, blender0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, porkMeatcake)
+occupy(blender0)
+
+-accomplished task:
+
+-action:
+***
+get_agent0_flour_storage0
+noop_agent1
+***
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 11
+current game step: 6
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, flour)
+at(agent1, blender0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, porkMeatcake)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_blender0
+get_agent1_blender0
+***
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 10
+    name: porkMeatcake lifetime: 17
+current game step: 7
+maximum game steps: 30
+
+-agent state:
+at(agent0, blender0)
+hold(agent0, flour)
+at(agent1, blender0)
+hold(agent1, porkMeatcake)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, None)
+
+-accomplished task:
+
+-action:
+***
+put_agent0_blender0
+goto_agent1_servingtable0
+***
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 9
+    name: porkMeatcake lifetime: 16
+current game step: 8
+maximum game steps: 30
+
+-agent state:
+at(agent0, blender0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, porkMeatcake)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, flour)
+
+-accomplished task:
+
+-action:
+***
+goto_agent0_storage0
+put_agent1_servingtable0
+***
+-game state:
+current game level: level_1
+current dishes:
+    name: porkMeatcake lifetime: 15
+current game step: 9
+maximum game steps: 30
+
+-agent state:
+at(agent0, storage0)
+hold(agent0, None)
+at(agent1, servingtable0)
+hold(agent1, None)
+
+-kitchen state:
+inside(storage0, None)
+inside(servingtable0, None)
+inside(blender0, flour)
+
+-accomplished task:
+porkMeatcake,
+
+-action:
+***
+get_agent0_pork_storage0
+goto_agent1_blender0
