@@ -15,6 +15,7 @@ First, need to specify openai key on the command line
 export OPENAI_API_KEY='xxx'
 ```
 for example with 2 agents, with gpt-4 and level_0
+
 Please read agents/chat_agent.py  for more options.
 ```bash
 python agents/chat_agent.py  --level level_0 gpt-4 --num_agents 2
