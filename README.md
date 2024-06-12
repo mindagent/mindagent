@@ -68,8 +68,6 @@ python train/train.py --level level_0
 4. You are good to go! Take a look at `completion_palm` and `chat_palm` in `llm.py`.
 
 
-Put your openai API key to key.txt
-
 ## Run & Test env
 
 ```bash
