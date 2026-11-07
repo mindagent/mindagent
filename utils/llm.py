@@ -220,7 +220,7 @@ def chat_azure(history, temperature, max_tokens):
 
     while True:
         try:
-            response = requests.post(url, json=data, headers=headers)
+            response = requests.post(url, json=data, headers=headers, timeout=120)
             return response.json()['choices'][0]['message']['content']
         except:
             pass
